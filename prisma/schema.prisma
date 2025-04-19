@@ -4,8 +4,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "sqlserver"
+  url      = "sqlserver://valdobaldo:Abcdef123@valdoserver.database.windows.net:1433;pa200database?encrypt=true"
 }
 
 model User {
