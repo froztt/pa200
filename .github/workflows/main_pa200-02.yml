@@ -75,18 +75,10 @@ jobs:
               --overwrite \
               --auth-mode key \
               --account-key ${{ secrets.AZURE_STORAGE_KEY }}
-      - name: Prepare App Services deploy package
-        run: |
-          mkdir dist
-          cp -r build/server dist/server
-          cp build/index.js dist/index.js
-          cp build/handler.js dist/handler.js
-          cp build/shims.js dist/shims.js
-          cp build/env.js dist/env.js
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: "pa200-02"
           slot-name: "Production"
-          package: dist
+          package: .
