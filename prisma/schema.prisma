@@ -1,11 +1,11 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 datasource db {
   provider = "sqlserver"
-  url      = "sqlserver://valdobaldo:Abcdef123@valdoserver.database.windows.net:1433;pa200database?encrypt=true"
+  url      = "sqlserver://valdoserver.database.windows.net:1433;database=pa200database;user=valdobaldo;password=Abcdef123;encrypt=true"
 }
 
 model User {
